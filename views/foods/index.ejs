@@ -15,14 +15,21 @@
     <ul>
         <% if (pantry.length === 0) { %>
             <p>There are no items in this pantry.</p>
-        <% } %>
+        <% } else { %>
 
         <% pantry.forEach((item)=>{ %>
     <li>
-        <%= item.foodName %> 
+        <%= item.name %>
+
+        <form
+        action="/users/<%= user._id %>/foods/<%= item._id %>?_method=DELETE"
+        method="POST"
+        >
+        <button type="submit">Delete <%= item.name %></button>
     </li>
       <% }); %>
     </ul>
+    <% } %>
 </body>
 
 </html>
