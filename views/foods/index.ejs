@@ -21,6 +21,9 @@
     <li>
         <%= item.name %>
 
+        <a href="/users/<%= user._id %>/foods/<%= item._id %>/edit">
+        Edit <%= item.name %>
+        </a>
         <form
         action="/users/<%= user._id %>/foods/<%= item._id %>?_method=DELETE"
         method="POST"
