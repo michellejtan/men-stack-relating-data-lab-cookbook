@@ -1,0 +1,23 @@
+<!-- views/applications/new.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add a New Food</title>
+  </head>
+  <body>
+    <%- include('../partials/_navbar.ejs') %>
+    <h1>Add a New Food</h1>
+
+    <form action="/users/<%= user._id %>/foods" method="post">
+    <label for="foodName">Food Item:</label>
+    <input type="text" name="foodName" id="foodName" required/>
+
+    <button type="submit">Add Food</button>
+
+  </form>
+
+  </body>
+</html>

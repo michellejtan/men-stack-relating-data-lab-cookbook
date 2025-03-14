@@ -13,4 +13,9 @@ router.get('/', (req, res) => {
     }
 });
 
+// GET /users/:userId/foods/new
+router.get('/new', async (req, res) => {
+    res.render('foods/new.ejs');
+  });
+
 module.exports = router;
