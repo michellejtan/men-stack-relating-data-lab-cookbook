@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to <%= currentUser.username %>'s Pantry!</title>
+</head>
+
+<body>
+    <h1> Welcome to <%= currentUser.username %>'s Pantry! </h1>
+
+    <h2>
+        <%= currentUser.username %>'s Pantry:
+    </h2>
+
+    <% if (currentUser.pantry && currentUser.pantry.length> 0) { %>
+        <ul>
+            <% currentUser.pantry.forEach(item=> { %>
+                <li>
+                    <%= item.name %>
+                </li> <!-- Assuming item has a 'name' property -->
+                <% }) %>
+        </ul>
+        <% } else { %>
+            <ul>
+                <li>
+                    <p>No food items in this pantry.</p>
+                </li>
+
+            </ul>
+            <% } %>
+</body>
+
+</html>
