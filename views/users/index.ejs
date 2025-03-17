@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <title><%= user.username %>'s Profile</title> -->
+    <title>Community Page</title>
+</head>
+
+<body>
+    <%- include('../partials/_navbar.ejs') %>
+
+        <h1>Explore Our Community</h1>
+
+        <% if (allUsers.length===0) { %>
+            <p>No users found in the community.</p>
+            <% } else { %>
+                <ul>
+                    <% allUsers.forEach(user=> { %>
+                        <li>
+                            <!-- Display user's name and a link to their profile -->
+                            <a href="/users/<%= user._id %>/community/<%= user.id %>/">
+                                <%= user.username %>
+                            </a>
+                        </li>
+                        <% }) %>
+                </ul>
+                <% } %>
+</body>
+
+</html>
